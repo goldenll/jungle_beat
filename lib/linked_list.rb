@@ -1,17 +1,36 @@
 class LinkedList
-  # attr_reader :head
+  attr_reader :head, :next_node
 
-  # def initialize 
-  #   @head = nil
-  # end
-
-  def head 
-    nil
+  def initialize 
+    @head = nil
+    @next_node = nil
+    @nodes_count = 0
   end
 
   def append(data)
-    next_node = (data)
+    if @head == nil
+      @head = Node.new(data)
+      @nodes_count += 1
+    else 
+      current_node = @head
+      while(current_node.next_node)
+        current_node = current_node.next_node
+      end
+      current_node.next_node = Node.new(data)
+      @nodes_count += 1
+    end
   end
+
+  def count
+    @nodes_count
+  end
+
+
+
+
+  # def to_string
+  # end
+
 
 end
 
