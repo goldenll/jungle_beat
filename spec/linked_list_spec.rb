@@ -9,60 +9,54 @@ RSpec.describe LinkedList do
     expect(list).to be_an_instance_of(LinkedList)
   end
 
-  it "does not contain a head" do
+  it "does not initially contain a head" do
     list = LinkedList.new
 
     expect(list.head).to eq(nil)
   end
 
-  it "can append data" do
+  it "can add nodes" do
     list = LinkedList.new
+
     list.append("doop")
 
-    expect(list.append).to eq("doop")
+    expect(list.head.data).to eq("doop") 
+    expect(list.head.next_node).to eq(nil)
+    # expect(list.count).to eq(1)
   end
 
-# list.append("doop")
-# # => "doop"
+  xit "can add other nodes" do
+    list = LinkedList.new
+
+    list.append("deep")
+
+    expect(list.head.data).to eq("deep") 
+  end
 
 
-  # it "" do
-  #   list = LinkedList.new
 
-  #   expect().to eq()
-  # end
-
-  # it "" do
-  #   list = LinkedList.new
-
-  #   expect().to eq()
-  # end
-
-  # it "" do
-  #   list = LinkedList.new
-
-  #   expect().to eq()
-  # end
-
-  # it "" do
-  #   list = LinkedList.new
-
-  #   expect().to eq()
-  # end
 
 end
 
 
 
 
-# list
-# # => <LinkedList head=<Node data="doop" next_node=nil #5678904567890> #45678904567>
-
-# list.head.next_node
-# # => nil
 
 # list.count
 # # => 1
 
 # list.to_string
 # # => "doop"
+
+
+  # it "" do
+  #   list = LinkedList.new
+
+  #   expect().to eq()
+  # end
+
+  # it "" do
+  #   list = LinkedList.new
+
+  #   expect().to eq()
+  # end
