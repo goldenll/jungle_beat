@@ -1,8 +1,16 @@
 class LinkedList
-  attr_reader :head
+  # attr_reader :head
 
-  def initialize (head)
-    @head = head
+  # def initialize 
+  #   @head = nil
+  # end
+
+  def head 
+    nil
+  end
+
+  def append(data)
+    next_node = (data)
   end
 
 end
