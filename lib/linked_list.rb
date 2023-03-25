@@ -49,14 +49,19 @@ class LinkedList
     @nodes_count += 1
   end
 
-  # def insert(position, data)
+  def insert(position, data)
+    current_node = @head
+    count = 1
+      until count == position 
+        current_node = current.next_node
+        count += 1
+      end
+    insert_node = Node.new(data)
+    insert_node.next_node = current_node.next_node
+    current_node.next_node = insert_node
+    @nodes_count += 1
+  end
 
-  #   @nodes_count += 1
-  # end
-
-
-# insert will insert one or more elements at a given position in the list. It takes two parameters, the first one is the position at which to insert nodes, the second parameter is the string of data to be inserted.
-
-
+  
 end
 
