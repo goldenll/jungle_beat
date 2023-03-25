@@ -9,11 +9,10 @@ class LinkedList
   def append(data)
     if @head == nil
       @head = Node.new(data)
-      @nodes_count += 1
     else
       make_new_node(data)
-      @nodes_count += 1
     end
+    @nodes_count += 1
   end
 
   def make_new_node(data)
@@ -40,17 +39,24 @@ class LinkedList
   end
   
   def prepend(data)
-
-    
+    if @head == nil
+      @head = Node.new(data)
+    else
+      old_head = @head
+      @head = Node.new(data)
+      @head.next_node = old_head
+    end
+    @nodes_count += 1
   end
 
-# prepend will add nodes to the beginning of the list.
+  # def insert(position, data)
+
+  #   @nodes_count += 1
+  # end
+
+
+# insert will insert one or more elements at a given position in the list. It takes two parameters, the first one is the position at which to insert nodes, the second parameter is the string of data to be inserted.
 
 
 end
 
-
-
-
-
-# insert will insert one or more elements at a given position in the list. It takes two parameters, the first one is the position at which to insert nodes, the second parameter is the string of data to be inserted.
