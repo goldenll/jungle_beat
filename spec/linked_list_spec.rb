@@ -52,7 +52,7 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("dop woo plop suu")
   end
 
-  it "can use other methods to add nodes" do
+  it "can use other methods to manipulate nodes" do
     list = LinkedList.new
     list.append("deep")
     list.append("woo")
@@ -66,37 +66,6 @@ RSpec.describe LinkedList do
     expect(list.includes?("dep")).to eq(false)
     expect(list.pop).to eq("blop")
     expect(list.pop).to eq("shu")
-
-# list.pop
-# => "blop"
-
-# list.pop
-# => "shu"
-    
-
-
-  end #final
-
-
-
-
-
-
-# list.to_string
-# => "deep woo shi"
-
-
-    
-  
-
-
-
-
-
+    expect(list.to_string).to eq("deep woo shi")
+  end
 end
-
-
-
-
-
-
