@@ -1,5 +1,6 @@
 class LinkedList
   attr_reader :head
+  attr_accessor :to_string
 
   def initialize 
     @head = nil
@@ -64,7 +65,6 @@ class LinkedList
     @nodes_count += 1
     data
   end
-
 
   def find(position, elements)
     count = 0
