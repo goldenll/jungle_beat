@@ -5,15 +5,6 @@ RSpec.describe LinkedList do
   it "exists" do
     list = LinkedList.new
     expect(list).to be_an_instance_of(LinkedList)
-  end
-
-  it "does not initially contain a head" do
-    list = LinkedList.new
-    expect(list.head).to eq(nil)
-  end
-
-  it "can add nodes" do
-    list = LinkedList.new
     expect(list.head).to eq(nil)
     expect(list.append("doop")).to eq("doop") 
     expect(list.head.next_node).to eq(nil)
