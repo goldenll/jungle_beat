@@ -98,11 +98,13 @@ class LinkedList
   end
 
   def pop 
-
+    current_node = @head
+    until current_node.next_node.next_node == nil
+      current_node = current_node.next_node
+    end
+    removed_node_data = current_node.next_node.data
+    current_node.next_node = nil
+    @nodes_count += -1
+    return removed_node_data
   end
-  
-# pop removes elements the last element from the list.
-
-
-
-end #final
+end 
