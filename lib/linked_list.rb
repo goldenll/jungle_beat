@@ -62,6 +62,47 @@ class LinkedList
     @nodes_count += 1
   end
 
-  
-end
 
+  def find(position, elements)
+    count = 0
+    current_node = @head
+    until count == position
+      count += 1
+      current_node = current_node.next_node
+    end
+    look(elements, current_node)
+  end
+
+  def look(elements, current_node)
+    found = ("")
+    count = 0
+    until count == elements
+      break if current_node == nil
+      count += 1
+      found << current_node.data + " "
+      current_node = current_node.next_node
+    end
+    found.to_str.strip
+  end
+
+  def includes?(value)
+    current_node = @head
+    until current_node == nil
+      if current_node.data == value
+        return true
+      else
+        return false
+      end
+      current_node = current_node.next_node
+    end
+  end
+
+  def pop 
+
+  end
+  
+# pop removes elements the last element from the list.
+
+
+
+end #final
