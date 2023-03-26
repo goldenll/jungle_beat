@@ -1,5 +1,5 @@
 class LinkedList
-  attr_reader :head 
+  attr_reader :head
 
   def initialize 
     @head = nil
@@ -13,6 +13,7 @@ class LinkedList
       make_new_node(data)
     end
     @nodes_count += 1
+    data
   end
 
   def make_new_node(data)
@@ -47,6 +48,7 @@ class LinkedList
       @head.next_node = old_head
     end
     @nodes_count += 1
+    data
   end
 
   def insert(position, data)
@@ -60,6 +62,7 @@ class LinkedList
     insert_node.next_node = current_node.next_node
     current_node.next_node = insert_node
     @nodes_count += 1
+    data
   end
 
 
