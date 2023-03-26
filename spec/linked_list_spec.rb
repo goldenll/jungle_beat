@@ -14,8 +14,8 @@ RSpec.describe LinkedList do
 
   it "can add nodes" do
     list = LinkedList.new
-    list.append("doop")
-    expect(list.head.data).to eq("doop") 
+    expect(list.head).to eq(nil)
+    expect(list.append("doop")).to eq("doop") 
     expect(list.head.next_node).to eq(nil)
     expect(list.count).to eq(1)
     expect(list.to_string).to eq("doop")
@@ -24,31 +24,22 @@ RSpec.describe LinkedList do
   it "can add multiple nodes" do
     list = LinkedList.new
     expect(list.head).to eq(nil)
-
-    list.append("doop")
-    expect(list.head.data).to eq("doop") 
+    expect(list.append("doop")).to eq("doop") 
     expect(list.head.next_node).to eq(nil)
-
-    list.append("deep")
-    expect(list.head.next_node.data).to eq("deep") 
+    expect(list.append("deep")).to eq("deep")  
     expect(list.count).to eq(2) 
     expect(list.to_string).to eq("doop deep")
   end
 
   it "can add nodes to specific positions in the list" do
     list = LinkedList.new
-
-    list.append("plop")
-    expect(list.head.data).to eq("plop") 
+    expect(list.append("plop")).to eq("plop")
     expect(list.to_string).to eq("plop")
-
-    list.append("suu")
-    list.prepend("dop")
-    expect(list.head.data).to eq("dop")
+    expect(list.append("suu")).to eq("suu")
+    expect(list.prepend("dop")).to eq("dop")
     expect(list.to_string).to eq("dop plop suu")
     expect(list.count).to eq(3)
-    list.insert(1, "woo")
-    expect(list.head.next_node.data).to eq("woo")
+    expect(list.insert(1, "woo")).to eq("woo")
     expect(list.to_string).to eq("dop woo plop suu")
   end
 
