@@ -1,25 +1,34 @@
-require "./lib/linked_list"
 class JungleBeat       
-  attr_reader :list 
+  attr_reader :list, :data
 
   def initialize
-    @list = list
+    @list = new_list
+    # @datum_count = 0
   end
-"Update file after meeting with student support"
-  def list
-    list = LinkedList.new
+
+  def new_list
+    LinkedList.new
   end
 
   def append(data)
-    broken = data.split
-    broken.each do |broke|
-    require 'pry'; binding.pry
-
-      list.append(broke)
+    broken_data = data.split
+    broken_data.each do |datum|
+      @list.append(datum)
     end
+    data
   end
 
- 
+
+#  #need a counter, linked list counter will not work
+  # def count
+  #   @datum_count
+  #   list.each do |datum|
+  #     @datum_count += 1
+  #   end
+  # end
+
+
+
 
 
 
