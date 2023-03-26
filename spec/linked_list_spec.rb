@@ -35,7 +35,7 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq("doop deep")
   end
 
-  it "can add nodes to the beginning of the list" do
+  it "can add nodes to specific positions in the list" do
     list = LinkedList.new
 
     list.append("plop")
@@ -50,8 +50,48 @@ RSpec.describe LinkedList do
     list.insert(1, "woo")
     expect(list.head.next_node.data).to eq("woo")
     expect(list.to_string).to eq("dop woo plop suu")
-  
   end
+
+  it "can use other methods to add nodes" do
+    list = LinkedList.new
+    list.append("deep")
+    list.append("woo")
+    list.append("shi")
+    list.append("shu")
+    list.append("blop")
+    expect(list.to_string).to eq("deep woo shi shu blop")
+    expect(list.find(2, 1)).to eq("shi")
+    expect(list.find(1, 3)).to eq("woo shi shu")
+    expect(list.includes?("deep")).to eq(true)
+    expect(list.includes?("dep")).to eq(false)
+    expect(list.pop).to eq("blop")
+    expect(list.pop).to eq("shu")
+
+# list.pop
+# => "blop"
+
+# list.pop
+# => "shu"
+    
+
+
+  end #final
+
+
+
+
+
+
+# list.to_string
+# => "deep woo shi"
+
+
+    
+  
+
+
+
+
 
 end
 
