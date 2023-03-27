@@ -2,9 +2,8 @@ require "./lib/linked_list"
 require "./lib/node"
 
 RSpec.describe LinkedList do
-  it "exists" do
+  it "can add a node, create a string, and count the total nodes" do
     list = LinkedList.new
-    expect(list).to be_an_instance_of(LinkedList)
     expect(list.head).to eq(nil)
     expect(list.append("doop")).to eq("doop") 
     expect(list.head.next_node).to eq(nil)
