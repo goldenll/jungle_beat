@@ -1,5 +1,5 @@
 class JungleBeat       
-  attr_reader :list, :data
+  attr_reader :list 
 
   def initialize
     @list = new_list
