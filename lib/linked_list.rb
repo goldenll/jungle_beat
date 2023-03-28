@@ -1,6 +1,5 @@
 class LinkedList
   attr_reader :head
-  attr_accessor :to_string
 
   def initialize 
     @head = nil
